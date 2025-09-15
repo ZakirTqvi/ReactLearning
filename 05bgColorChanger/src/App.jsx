@@ -1,14 +1,15 @@
 import { useState } from "react";
 
 function App() {
-   const [color, setColor] = useState('pink')
+   const defaultColor = 'black';
+   const [color, setColor] = useState(defaultColor)
 
   return (
     <div className="bg-slate-600 h-screen w-full "
      
     style={{backgroundColor:color}}
     >
-      <footer className="fixed bottom-0 left-0 w-full bg-gray-50 p-4">
+      <footer className="fixed bottom-0 left-0 w-full bg-gray-600 p-4">
         <div className="flex justify-center gap-4 flex-wrap">
           <button className="bg-red-500 text-white px-4 py-2 rounded"
           onClick={()=>setColor('red')}
@@ -35,6 +36,17 @@ function App() {
           >
             Yellow
           </button>
+
+          <button className={`px-4 py-2 rounded ${
+            color === defaultColor ? "bg-gray-400 text-gray-200 cursor-not-allowed"
+            : "bg-black text-white"
+          }`}
+          onClick={()=>setColor(defaultColor)}
+          disabled = {color === defaultColor}
+          >
+            Default
+          </button>
+
         </div>
       </footer>
     </div>
