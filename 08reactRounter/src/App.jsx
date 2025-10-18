@@ -1,9 +1,17 @@
 import React from 'react'
+import Home from './components/Home/Home'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+
 
 function App() {
 
   return (
-    <h1 className='bg-red-500'>React Rounter</h1>
+    <div>
+      <Header />
+      <Home />
+      <Footer />
+    </div>
   )
 }
 
